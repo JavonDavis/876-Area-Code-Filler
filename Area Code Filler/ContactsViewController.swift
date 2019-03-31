@@ -18,6 +18,7 @@ class ContactsViewController: UIViewController {
     }
     var contacts = [Contact]()
     let store = CNContactStore()
+    let numberOperations = NumberOperations()
     @IBOutlet weak var contactsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -90,36 +91,6 @@ class ContactsViewController: UIViewController {
         }
         
     }
-    
-    func getNumbers(phoneNumber: String) -> String {
-        var newNumber = ""
-        for char in phoneNumber {
-            if char <= "9" && char >= "0" {
-                newNumber += String(char)
-            }
-        }
-        return newNumber
-    }
-    
-    func startsWith876(phoneNumber: String) -> Bool {
-        let numbers = getNumbers(phoneNumber: phoneNumber)
-        if numbers.count >= 7 {
-            return numbers.starts(with: "1876") || numbers.starts(with: "876")
-        }
-        return false
-    }
-    
-    func replaceWith876(phoneNumber: String) -> String {
-        var newNumber = ""
-        let numbers = getNumbers(phoneNumber: phoneNumber)
-        if numbers.starts(with: "1") {
-            newNumber += "1"
-        }
-        
-        newNumber += "876"
-        newNumber += String(numbers[numbers.index(numbers.startIndex, offsetBy: max(0, numbers.count - 7))...])
-        return newNumber
-    }
 
 }
 
@@ -132,9 +103,9 @@ extension ContactsViewController: UITableViewDelegate {
         let phoneNumber = contact.numbers[indexPath.row]
         
         print("Clicked \(phoneNumber)")
-        if !startsWith876(phoneNumber: phoneNumber) {
+        if !numberOperations.startsWith876(phoneNumber: phoneNumber) {
             let currentLabel = cnContact.phoneNumbers[indexPath.row].label
-            let newNumber = CNPhoneNumber(stringValue: replaceWith876(phoneNumber: phoneNumber))
+            let newNumber = CNPhoneNumber(stringValue: numberOperations.replaceWith876(phoneNumber: phoneNumber))
             showAlert(title: "Change number?", message: "Would you like to change \(phoneNumber) to \(newNumber.stringValue)?", okHandler: { _ in
                 cnContact.phoneNumbers[indexPath.row] = CNLabeledValue(label: currentLabel, value: newNumber)
                 

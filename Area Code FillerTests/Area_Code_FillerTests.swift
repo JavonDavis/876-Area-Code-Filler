@@ -11,6 +11,8 @@ import XCTest
 
 class Area_Code_FillerTests: XCTestCase {
 
+    var numbers = ["(876) 3682393", "", "343231342", "134333223","4535643"]
+    var expectedResult = [ "8763682393", "", "8763231342", "18764333223", "8764535643" ]
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,15 +21,13 @@ class Area_Code_FillerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
     func testPerformanceExample() {
-        // This is an example of a performance test case.
+        let numberOperations = NumberOperations()
         self.measure {
-            // Put the code you want to measure the time of here.
+            for (i, e) in numbers.enumerated() {
+                let expectedNumber = expectedResult[expectedResult.index(expectedResult.startIndex, offsetBy: i)]
+                XCTAssertEqual(numberOperations.replaceWith876(phoneNumber: e), expectedNumber)
+            }
         }
     }
 

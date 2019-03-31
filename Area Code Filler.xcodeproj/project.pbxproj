@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8ABBD09122502CB70028474A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBD09022502CB70028474A /* ContactTableViewCell.swift */; };
+		8ABBD093225187CB0028474A /* NumberOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBD092225187CB0028474A /* NumberOperations.swift */; };
 		8AEC777D21C06D98001301FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC777C21C06D98001301FB /* AppDelegate.swift */; };
 		8AEC777F21C06D98001301FB /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC777E21C06D98001301FB /* ContactsViewController.swift */; };
 		8AEC778221C06D98001301FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AEC778021C06D98001301FB /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		8ABBD09022502CB70028474A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		8ABBD092225187CB0028474A /* NumberOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOperations.swift; sourceTree = "<group>"; };
 		8AEC777921C06D98001301FB /* Area Code Filler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Area Code Filler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AEC777C21C06D98001301FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AEC777E21C06D98001301FB /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				8AEC778321C06D99001301FB /* Assets.xcassets */,
 				8AEC778521C06D99001301FB /* LaunchScreen.storyboard */,
 				8AEC778821C06D99001301FB /* Info.plist */,
+				8ABBD092225187CB0028474A /* NumberOperations.swift */,
 			);
 			path = "Area Code Filler";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				8ABBD09122502CB70028474A /* ContactTableViewCell.swift in Sources */,
 				8AEC777F21C06D98001301FB /* ContactsViewController.swift in Sources */,
+				8ABBD093225187CB0028474A /* NumberOperations.swift in Sources */,
 				8AEC777D21C06D98001301FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
